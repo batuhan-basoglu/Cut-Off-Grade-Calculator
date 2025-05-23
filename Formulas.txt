@@ -1,0 +1,38 @@
+The process began with utilizing average weighted grade data from a table to determine the recovery rate and processing costs.  These values were then applied in the cut-off grade calculation: Cut-Off Grade = Processing Cost / ((Net Price) * Recovery). The average weighted grade and net price were sourced directly from the table. Finally, Python was employed to create graphs illustrating the cut-off grade, recovery rate, and processing cost trends.
+
+Cut-Off Grade = Processing Cost / ((Net Price) * Recovery)
+
+Recovery = Rmax * (1 - e^(-k * G))
+
+Processing Cost = a + b * G
+
+
+Processing Cost Formulas
+
+1. Fixed + Grade-Dependent Cost Model  
+processing cost = C0 + C1 / G
+
+2. Regression from Real Cost Data (Realist)
+
+Linear: C = a + b * G
+
+Inverse or Logarithmic: C = a + b / G or C = a * log(G) + b
+
+3. Tabulated Cost Based on Grade
+
+Table equivalent for the given grade
+
+
+Recovery Formulas
+
+1. Empirical Linear Model
+
+Recovery = a + b * G
+
+2. Exponential or Logistic Model (Realist)
+
+Recovery = Rmax * (1 - e^(-k * G))
+
+3. Stepwise or Tabulated Recovery
+
+Table equivalent for the given grade
