@@ -16,7 +16,7 @@ df = pd.DataFrame(data)
 # Recovery (%) = R_max / (1 + exp(-k * (Grade - x0)))
 # Models increasing recovery efficiency with grade using an S-curve
 R_max = 100   # Maximum theoretical recovery (%)
-k = 10        # Steepness of the logistic curve
+k = 5        # Steepness of the logistic curve
 x_0 = 0.8     # Grade at which recovery rate reaches ~50% of R_max
 
 df["Recovery (%)"] = (R_max / (1 + np.exp(-k * (df["Weighted Grade (%)"] - x_0)))) / 100
