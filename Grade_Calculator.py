@@ -16,16 +16,16 @@ df = pd.DataFrame(data)
 # Recovery (%) = R_max / (1 + exp(-k * (Grade - x0)))
 # Models increasing recovery efficiency with grade using an S-curve
 R_max = 100   # Maximum theoretical recovery (%)
-k = 5        # Steepness of the logistic curve
-x_0 = 0.8     # Grade at which recovery rate reaches ~50% of R_max
+k = 1.5        # Steepness of the logistic curve
+x_0 = 0.2     # Grade at which recovery rate reaches ~50% of R_max
 
-df["Recovery (%)"] = (R_max / (1 + np.exp(-k * (df["Weighted Grade (%)"] - x_0)))) / 100
+df["Recovery (%)"] = (R_max / (1 + np.exp(-k * (df["Weighted Grade (%)"] - x_0))))
 
 # === Processing Cost Estimation (Linear Regression Model) ===
 # Processing Cost ($/t) = A + B * Grade
 # Reflects increasing cost with higher grade due to more intensive processing
 A = 12    # Fixed base processing cost ($/t)
-B = 0.1   # Incremental cost increase per % grade
+B = 0.6   # Incremental cost increase per % grade
 df["Processing Cost ($/t)"] = A + B * df["Weighted Grade (%)"]
 
 # === Cut-off Grade Calculation ===
